@@ -156,13 +156,19 @@ public class SaddlePoints {
 
 
         int[] smallestVals = smallestValues(array);
-        //transpose array
-        int rows = array.length;
-        int col = array[0].length;
+        int[] largestVals = largestValues(array);
 
+        //convert largest value in hashset
+        Set<Integer> largestValsSet = new HashSet<>();
+        for(int val: largestVals){
+            largestValsSet.add(val);
+        }
 
-
-
+        for (int val: smallestVals){
+            if (largestValsSet.contains(val)){
+                return true;
+            }
+        }
 
         return false;
     }
