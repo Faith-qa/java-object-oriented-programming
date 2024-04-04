@@ -71,7 +71,15 @@ public class SaddlePoints {
      * @return The largest value in the array.
      */
     int largest(int[] array) {
-        return Integer.MIN_VALUE;
+        int maxVal = Integer.MIN_VALUE;
+
+        for (int j : array) {
+            if (j > maxVal) {
+                maxVal = j;
+            }
+        }
+
+        return maxVal;
     }
 
     /**
