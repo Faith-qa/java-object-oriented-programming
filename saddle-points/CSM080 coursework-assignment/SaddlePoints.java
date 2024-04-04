@@ -4,7 +4,7 @@ package saddlePoints;
  * Creates a number of random arrays, and checks each array to see
  * if it contains a saddle point. Prints the arrays and the results.
  *
- * @author PUT YOUR NAME HERE
+ * @author Faith Okoth
  */
 public class SaddlePoints {
     /**
@@ -13,6 +13,10 @@ public class SaddlePoints {
      * it. Keeps generating arrays until it has printed at least one with and
      * one without a saddle point.
      */
+    private int numberOfRows;
+    private int numberOfColumns;
+    private int minValue;
+    private int maxValue;
     void run() {
 
     }
