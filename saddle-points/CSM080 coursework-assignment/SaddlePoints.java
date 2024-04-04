@@ -19,8 +19,35 @@ public class SaddlePoints {
     private int numberOfColumns;
     private int minValue;
     private int maxValue;
-    private int[][] saddleArr;
+
+     SaddlePoints(){
+        this.numberOfRows = 0;
+        this.numberOfColumns = 0;
+        this.minValue = 0;
+        this.maxValue = 0;
+    }
+
     void run() {
+
+        boolean successful = false;
+
+        while(successful){
+            Random rand = new Random();
+            numberOfRows = rand.nextInt(-2, 20);
+            numberOfColumns = rand.nextInt(-2, 20);
+            minValue = rand.nextInt(-2, 20);
+            maxValue = rand.nextInt(-2, 20);
+            int [][] arr = createRandomArray(numberOfRows, numberOfColumns, minValue, maxValue);
+            printArray(arr);
+            if(hasSaddlePoint(arr)){
+                printArrayInfo(arr);
+                successful = true;
+            }
+            printArrayInfo(arr);
+        }
+
+
+
 
     }
 
@@ -30,6 +57,7 @@ public class SaddlePoints {
      * @param array The array to be printed.
      */
     void printArray(int[][] array) {
+        System.out.println(array);
 
     }
 
@@ -40,6 +68,17 @@ public class SaddlePoints {
      * @param array The array to be checked.
      */
     void printArrayInfo(int[][] array) {
+        if(hasSaddlePoint(array)){
+            int row = saddlePointRow(array);
+            int column = saddlePointColumn(array);
+            System.out.println(array + "has a saddle point at (" + row + "," + column + ") and its value is "+ array[row][column]);
+
+        }else{
+            System.out.println(array + " has no saddle point");
+        }
+
+
+
 
     }
 
@@ -54,6 +93,7 @@ public class SaddlePoints {
      * @return
      */
     int[][] createRandomArray(int numberOfRows, int numberOfColumns, int minValue, int maxValue) {
+
         int [][] randomArr = new int [numberOfRows][numberOfColumns];
         Random rand = new Random();
 
