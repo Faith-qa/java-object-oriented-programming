@@ -124,8 +124,13 @@ public class SaddlePoints {
      * @return An array of the smallest values in each row.
      */
     int[] smallestValues(int[][] array) {
-        return null;
-    }
+        int[] smallestVals = new int[array.length];
+
+        for(int i = 0; i < array.length; i++){
+            smallestVals[i] = smallest(array[i]);
+        }
+
+        return smallestVals;    }
 
 
     /**

@@ -66,6 +66,13 @@ public class SaddlePointsTest {
 
     @Test
     public void smallestValues() {
+        int[][] with = {{-9, 12, -6},
+                { 7, 14,  5},
+                {10, -8,  3},
+                { 6, 17,-10}};
+        int[] results = sp.smallestValues(with);
+
+        assertArrayEquals(new int[]{-9,5,-8,-10}, results);
     }
 
     @Test
