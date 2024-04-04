@@ -55,6 +55,13 @@ public class SaddlePointsTest {
 
     @Test
     public void largestValues() {
+        int[][] with = {{-9, 12, -6},
+                { 7, 14,  5},
+                {10, -8,  3},
+                { 6, 17,-10}};
+        int[] results = sp.largestValues(with);
+
+        assertArrayEquals(new int[]{12,14,10,17}, results);
     }
 
     @Test

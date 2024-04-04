@@ -111,7 +111,7 @@ public class SaddlePoints {
         int[] largestVals = new int[array.length];
 
         for(int i = 0; i < array.length; i++){
-            largestVals[largestVals.length - 1] = largest(array[i]);
+            largestVals[i] = largest(array[i]);
         }
 
         return largestVals;
