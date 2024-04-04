@@ -1,5 +1,5 @@
 package saddlePoints;
-
+import java.util.Random;
 /**
  * Creates a number of random arrays, and checks each array to see
  * if it contains a saddle point. Prints the arrays and the results.
@@ -17,6 +17,7 @@ public class SaddlePoints {
     private int numberOfColumns;
     private int minValue;
     private int maxValue;
+    private int[][] saddleArr;
     void run() {
 
     }
@@ -51,7 +52,16 @@ public class SaddlePoints {
      * @return
      */
     int[][] createRandomArray(int numberOfRows, int numberOfColumns, int minValue, int maxValue) {
-        return null;
+        int [][] randomArr = new int [numberOfRows][numberOfColumns];
+        Random rand = new Random();
+
+        for (int i = 0; i < numberOfRows; i++){
+            for(int j = 0; j < numberOfColumns; j++){
+                randomArr[i][j] = rand.nextInt(minValue, maxValue);
+            }
+        }
+        return randomArr;
+
     }
 
     /**
