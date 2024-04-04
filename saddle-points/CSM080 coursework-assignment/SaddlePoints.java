@@ -1,5 +1,7 @@
 package saddlePoints;
 import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
 /**
  * Creates a number of random arrays, and checks each array to see
  * if it contains a saddle point. Prints the arrays and the results.
@@ -107,14 +109,25 @@ public class SaddlePoints {
      * @return An array of the largest values in each column.
      */
     int[] largestValues(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+        //transpose the 3d
+        int[][] transposed = new int[cols][rows];
+        int[] largestValsCol = new int [cols];
 
-        int[] largestVals = new int[array.length];
+        //fill the transposed array
 
-        for(int i = 0; i < array.length; i++){
-            largestVals[i] = largest(array[i]);
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++){
+                transposed[j][i] = array[i][j];
+            }
         }
+        // fill the largest vals col
 
-        return largestVals;
+        for (int i = 0; i < transposed.length; i++ ){
+            largestValsCol[i] = largest(transposed[i]);
+        }
+        return largestValsCol;
     }
 
     /**
@@ -140,7 +153,18 @@ public class SaddlePoints {
      * @return True if the array has a saddle point, else false.
      */
     boolean hasSaddlePoint(int[][] array) {
-        return true;
+
+
+        int[] smallestVals = smallestValues(array);
+        //transpose array
+        int rows = array.length;
+        int col = array[0].length;
+
+
+
+
+
+        return false;
     }
 
     /**
