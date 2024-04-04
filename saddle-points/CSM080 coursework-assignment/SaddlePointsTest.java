@@ -87,10 +87,22 @@ public class SaddlePointsTest {
 
     @Test
     public void saddlePointRow() {
+        int[][] with = {{-9, 12, -6},
+                { 7, 14,  5},
+                {10, -8,  3},
+                { 6, 17,-10}};
+        int result = sp.saddlePointRow(with);
+        assertEquals(1, result);
     }
 
     @Test
     public void saddlePointColumn() {
+        int[][] with = {{-9, 12, -6},
+                { 7, 14,  5},
+                {10, -8,  3},
+                { 6, 17,-10}};
+        int result = sp.saddlePointColumn(with);
+        assertEquals(2, result);
     }
 
     private int[] setupArray(int elements){

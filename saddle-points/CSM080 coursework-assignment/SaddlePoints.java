@@ -182,6 +182,23 @@ public class SaddlePoints {
      * @return The lowest-numbered row containing a saddle point.
      */
     int saddlePointRow(int[][] array) {
+        if (hasSaddlePoint(array)){
+            int[] smallestVals = smallestValues(array);
+            int[] largestVals = largestValues(array);
+
+            //convert largest value in hashset
+            Set<Integer> largestValsSet = new HashSet<>();
+            for(int val: largestVals){
+                largestValsSet.add(val);
+            }
+            for (int i = 0; i < smallestVals.length;i++ ){
+                if (largestValsSet.contains(smallestVals[i])){
+                    return i;
+                }
+            }
+
+
+        }
         return -1;
     }
 
@@ -195,6 +212,22 @@ public class SaddlePoints {
      */
 
     int saddlePointColumn(int[][] array) {
-        return -1;
+        if (hasSaddlePoint(array)) {
+            int[] smallestVals = smallestValues(array);
+            int[] largestVals = largestValues(array);
+            //convert largest value in hashset
+            Set<Integer> smallestValsSet = new HashSet<>();
+            for(int val: smallestVals){
+                smallestValsSet.add(val);
+            }
+            for(int i = 0; i <= largestVals.length; i++){
+                if (smallestValsSet.contains(largestVals[i])){
+                    return i;
+                }
+            }
+
+        }
+
+            return -1;
     }
 }
