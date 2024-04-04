@@ -39,6 +39,10 @@ public class SaddlePointsTest {
 
     @Test
     public void largest() {
+        int[] arr = {-9, 12, -6};
+        //test if it returns 12
+        int result = sp.largest(arr);
+        assertEquals(12, result);
     }
 
     @Test
