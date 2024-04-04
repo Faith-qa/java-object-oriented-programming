@@ -89,7 +89,15 @@ public class SaddlePoints {
      * @return The smallest value in the array.
      */
     int smallest(int[] array) {
-        return Integer.MAX_VALUE;
+        int minVal = Integer.MAX_VALUE;
+
+        for (int j : array){
+            if(j < minVal){
+                minVal = j;
+            }
+
+        }
+        return minVal;
     }
 
     /**
