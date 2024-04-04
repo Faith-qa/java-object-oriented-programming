@@ -107,7 +107,14 @@ public class SaddlePoints {
      * @return An array of the largest values in each column.
      */
     int[] largestValues(int[][] array) {
-        return null;
+
+        int[] largestVals = new int[array.length];
+
+        for(int i = 0; i < array.length; i++){
+            largestVals[largestVals.length - 1] = largest(array[i]);
+        }
+
+        return largestVals;
     }
 
     /**

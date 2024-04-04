@@ -47,6 +47,10 @@ public class SaddlePointsTest {
 
     @Test
     public void smallest() {
+        int[] arr = {-9, 12, -6};
+        //test if it returns 12
+        int result = sp.smallest(arr);
+        assertEquals(-9, result);
     }
 
     @Test
