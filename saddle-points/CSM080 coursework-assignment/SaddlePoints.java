@@ -1,7 +1,11 @@
 package saddlePoints;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.HashSet;
 import java.util.Set;
+
+import static java.lang.System.exit;
+
 /**
  * Creates a number of random arrays, and checks each array to see
  * if it contains a saddle point. Prints the arrays and the results.
@@ -31,19 +35,28 @@ public class SaddlePoints {
 
         boolean successful = false;
 
-        while(successful){
+        while(!successful){
+            System.out.println("app is starting");
             Random rand = new Random();
-            numberOfRows = rand.nextInt(-2, 20);
-            numberOfColumns = rand.nextInt(-2, 20);
+            numberOfRows = rand.nextInt(2,20);
+            numberOfColumns = rand.nextInt(2,20);
             minValue = rand.nextInt(-2, 20);
-            maxValue = rand.nextInt(-2, 20);
+            maxValue = rand.nextInt(20, 30);
+
             int [][] arr = createRandomArray(numberOfRows, numberOfColumns, minValue, maxValue);
             printArray(arr);
-            if(hasSaddlePoint(arr)){
-                printArrayInfo(arr);
-                successful = true;
+            if (arr != null){
+                if(hasSaddlePoint(arr)){
+                    printArrayInfo(arr);
+                    successful = true;
+                   // System.exit(0);
+                }else{
+                    printArrayInfo(arr);
+
+                }
+
             }
-            printArrayInfo(arr);
+
         }
 
 
@@ -57,7 +70,7 @@ public class SaddlePoints {
      * @param array The array to be printed.
      */
     void printArray(int[][] array) {
-        System.out.println(array);
+        System.out.println(Arrays.deepToString(array));
 
     }
 
@@ -96,10 +109,13 @@ public class SaddlePoints {
 
         int [][] randomArr = new int [numberOfRows][numberOfColumns];
         Random rand = new Random();
+        if(minValue == maxValue || maxValue < minValue){
+            return null;
+        }
 
         for (int i = 0; i < numberOfRows; i++){
             for(int j = 0; j < numberOfColumns; j++){
-                randomArr[i][j] = rand.nextInt(minValue, maxValue);
+                randomArr[i][j] = rand.nextInt(minValue, maxValue)+minValue;
             }
         }
         return randomArr;

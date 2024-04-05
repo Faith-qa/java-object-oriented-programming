@@ -105,6 +105,8 @@ public class SaddlePointsTest {
         assertEquals(2, result);
     }
 
+
+
     private int[] setupArray(int elements){
         return null;
 
