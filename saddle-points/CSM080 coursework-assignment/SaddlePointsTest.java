@@ -83,6 +83,12 @@ public class SaddlePointsTest {
                 { 6, 17,-10}};
         assertTrue(sp.hasSaddlePoint(with));
 
+        int [][] without = {{ 1, -2,  3},
+                {-6,  5, -4},
+                { 7, -8,  9}};
+
+        assertFalse(sp.hasSaddlePoint(without));
+
     }
 
     @Test
