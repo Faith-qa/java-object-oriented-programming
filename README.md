@@ -1,4 +1,4 @@
-# CSM080 OOP coursework: Saddle Points 
+# Saddle Points 
 
 ## Coursework brief
 
